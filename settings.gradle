@@ -1,0 +1,10 @@
+pluginManagement {
+    plugins {
+        id 'org.siouan.frontend-jdk8' version '6.0.0'
+    }
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+include 'backend', 'frontend'
