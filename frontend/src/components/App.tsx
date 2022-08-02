@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import axios from 'axios';
 import List from 'antd/lib/list';
@@ -7,6 +8,9 @@ import Col from 'antd/lib/col';
 import TodoType from "types/TodoResponse";
 import CheckOutlined from '@ant-design/icons/CheckOutlined';
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
+import RedoOutlined from '@ant-design/icons/RedoOutlined';
+import Input from 'antd/lib/input';
+import { isTypeAliasDeclaration } from "typescript";
 
 const API = axios.create({
     baseURL: '/api/v1/',
@@ -29,10 +33,15 @@ const fetchDelete = (id: number) => {
     return API.delete(`todos/${id}`);
 }
 
+const fetchSave = (todo: string) => {
+    console.log('??')
+    return API.post('todos', { "content" : todo});
+}
 
 function App() {
     const queryClient = useQueryClient();
-    const { isLoading, isError, data } = useQuery('getList', () => fetchList());
+    const [text, setText] = useState('');
+    const { isLoading, isError, data, refetch } = useQuery('getList', () => fetchList());
     
     const { mutate: doComplete } = useMutation(fetchComplete, {
         onSuccess: () => {
@@ -46,8 +55,17 @@ function App() {
         }
     });
 
-    const doSave = () => {
-        ;;
+    const { mutate: doSave } = useMutation(fetchSave, {
+        onSuccess: () => {
+            queryClient.invalidateQueries('getList', {exact : true});
+            setText("");
+        }
+    })
+
+    const handleKeyDown = (e: any) => {
+        if (e.keyCode === 13) {
+            doSave(text);
+        }
     }
 
     if (isLoading) return <div>loading...</div>
@@ -59,6 +77,8 @@ function App() {
                     bordered
                     itemLayout="horizontal"
                     dataSource={data}
+                    header={<RedoOutlined onClick={() => refetch()}/>}
+                    footer={<Input onKeyDown={handleKeyDown} onChange={e => setText(e.target.value)} value={text}/>}
                     renderItem={(item: TodoType) => (
                         <List.Item key={item.id}
                             actions={[
