@@ -4,6 +4,7 @@ package io.haedoang.todolist.todo.application;
 import io.haedoang.todolist.todo.application.dto.TodoRequest;
 import io.haedoang.todolist.todo.application.dto.TodoResponse;
 import io.haedoang.todolist.todo.domain.Todo;
+import io.haedoang.todolist.todo.exception.TodoNotExistException;
 import io.haedoang.todolist.todo.infra.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,14 +39,18 @@ public class TodoService {
     }
 
     @Transactional
-    public void complete(Long id) {
-        Todo todo = todoRepository.findById(id).orElseThrow();
-        todo.doComplete();
+    public void doComplete(Long id) {
+        findById(id).doComplete();
     }
 
     @Transactional
     public void delete(Long id) {
-        Todo todo = todoRepository.findById(id).orElseThrow();
-        todo.doDelete();
+        findById(id).doDelete();
+    }
+
+
+    public Todo findById(Long id) {
+        return todoRepository.findById(id)
+                .orElseThrow(TodoNotExistException::new);
     }
 }

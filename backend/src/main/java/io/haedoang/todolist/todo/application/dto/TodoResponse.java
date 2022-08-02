@@ -18,7 +18,7 @@ import static lombok.AccessLevel.PRIVATE;
 public class TodoResponse {
     private Long id;
     private String content;
-    private boolean isCompleted;
+    private boolean completed;
 
     public static TodoResponse valueOf(Todo entity) {
         return new TodoResponse(entity.getId(), entity.getContent(), entity.getStatus().isFinished());
