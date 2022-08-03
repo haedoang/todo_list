@@ -17,6 +17,11 @@ function AlbumViewer({ data }: AlbumProps) {
                 {
                     data.length > 0 &&
                     data.slice()
+                        .sort((a:AlbumType, b:AlbumType) => {
+                            if (a.lastModified < b.lastModified) return 1;
+                            else if (a.lastModified > b.lastModified) return -1
+                            else return 0;
+                        })
                         .map((album: AlbumType, index: number) => (
                             <Card
                                 key={index}

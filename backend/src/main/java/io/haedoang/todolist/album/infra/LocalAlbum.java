@@ -33,7 +33,7 @@ public class LocalAlbum implements AlbumHandler {
     public List<AlbumResponse> getList() {
         File uploadPath = new File(fileUploadPath);
         if (!uploadPath.isDirectory()) throw new AssertionError();
-        return Arrays.stream(Objects.requireNonNull(uploadPath.list()))
+        return Arrays.stream(Objects.requireNonNull(uploadPath.listFiles()))
                 .map(AlbumResponse::valueOf)
                 .collect(Collectors.toList());
     }

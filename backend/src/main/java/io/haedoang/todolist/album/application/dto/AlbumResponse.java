@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.io.File;
+
 /**
  * author : haedoang
  * date : 2022-08-03
@@ -15,7 +17,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class AlbumResponse {
     private String fileName;
-    public static AlbumResponse valueOf(String fileName) {
-        return new AlbumResponse(fileName);
+    private long lastModified;
+
+    public static AlbumResponse valueOf(File file) {
+        return new AlbumResponse(file.getName(), file.lastModified());
     }
 }
