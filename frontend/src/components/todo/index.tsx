@@ -2,9 +2,7 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import List from 'antd/lib/list';
-import Row from 'antd/lib/row';
 import Typography from "antd/lib/typography";
-import Col from 'antd/lib/col';
 import TodoType from "types/TodoResponse";
 import CheckOutlined from '@ant-design/icons/CheckOutlined';
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';

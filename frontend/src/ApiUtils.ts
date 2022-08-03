@@ -11,6 +11,11 @@ export const fetchTodoList = () => {
         .then((res) => res.data);
 }
 
+export const fetchAlbumList = () => {
+    return API.get('albums')
+        .then((res) => res.data);
+}
+
 export const fetchUpdate = (id: number) => {
     return API.patch(`todos/${id}`);
 }
@@ -20,5 +25,5 @@ export const fetchDelete = (id: number) => {
 }
 
 export const fetchSave = (todo: string) => {
-    return API.post('todos', { "content" : todo});
+    return API.post('todos', { "content": todo });
 }
