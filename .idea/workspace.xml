@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d53f7e3f-3914-4060-92c8-66a6056799ca" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/upload/ui/UploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/application/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/application/TodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/application/dto/TodoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/application/dto/TodoRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/domain/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/domain/Todo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/ui/ToDoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/todo/ui/ToDoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/io/haedoang/todolist/todo/domain/TodoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/io/haedoang/todolist/todo/domain/TodoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +70,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -104,7 +113,11 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "last_opened_file_path": "C:/app/ipgscarweb",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -187,8 +200,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TodoTest.updateStatus" />
         <item itemvalue="Gradle.todo_list [build]" />
+        <item itemvalue="Gradle.TodoTest.updateStatus" />
         <item itemvalue="Gradle.todo_list:backend [build]" />
       </list>
     </recent_temporary>
