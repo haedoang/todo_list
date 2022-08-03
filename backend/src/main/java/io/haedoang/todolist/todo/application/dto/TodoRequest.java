@@ -18,7 +18,6 @@ import static lombok.AccessLevel.PRIVATE;
 public class TodoRequest {
     private String content;
 
-
     public static TodoRequest valueOf(String content) {
         return new TodoRequest(content);
     }

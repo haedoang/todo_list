@@ -43,8 +43,8 @@ public class ToDoController {
     }
 
     @PatchMapping("{id}")
-    public ResponseEntity<Void> complete(@PathVariable Long id) {
-        todoService.doComplete(id);
+    public ResponseEntity<Void> changeStatus(@PathVariable Long id) {
+        todoService.changeStatus(id);
         return ResponseEntity.ok().build();
     }
 

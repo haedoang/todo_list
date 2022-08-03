@@ -82,7 +82,7 @@ function App() {
                     renderItem={(item: TodoType) => (
                         <List.Item key={item.id}
                             actions={[
-                                <a onClick={() => doComplete(item.id)} style={{ display: item.completed ? 'none' : 'block' }}><CheckOutlined /></a>,
+                                <a onClick={() => doComplete(item.id)} /**style={{ display: item.completed ? 'none' : 'block' }}*/><CheckOutlined /></a>,
                                 <a onClick={() => doDelete(item.id)}><DeleteOutlined/></a>]
                             }
                         >

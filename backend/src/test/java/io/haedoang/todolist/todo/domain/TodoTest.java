@@ -25,4 +25,26 @@ class TodoTest {
         assertThat(todo.isDeleted()).isFalse();
         assertThat(todo.getStatus().isNotFinished()).isTrue();
     }
+
+    @Test
+    @DisplayName("TODO 상태 변경하기")
+    public void updateStatus() {
+        // given
+        Todo todo = Todo.valueOf("밥먹기");
+
+        // then
+        assertThat(todo.getStatus().isNotFinished()).isTrue();
+
+        // when
+        todo.updateStatus();
+
+        // then
+        assertThat(todo.getStatus().isFinished()).isTrue();
+
+        // when
+        todo.updateStatus();
+
+        // then
+        assertThat(todo.getStatus().isNotFinished()).isTrue();
+    }
 }

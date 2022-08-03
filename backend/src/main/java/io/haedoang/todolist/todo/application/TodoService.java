@@ -39,8 +39,8 @@ public class TodoService {
     }
 
     @Transactional
-    public void doComplete(Long id) {
-        findById(id).doComplete();
+    public void changeStatus(Long id) {
+        findById(id).updateStatus();
     }
 
     @Transactional

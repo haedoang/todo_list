@@ -59,8 +59,8 @@ public class Todo {
         }
     }
 
-    public void doComplete() {
-        this.status = FINISHED;
+    public void updateStatus() {
+        this.status = status.isFinished() ? NOT_FINISHED : FINISHED;
     }
 
     public void doDelete() {
