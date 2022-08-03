@@ -24,9 +24,7 @@ import java.util.List;
 @RequestMapping("api/v1/albums")
 @RequiredArgsConstructor
 public class AlbumController {
-
     private final AlbumService albumService;
-
 
     @GetMapping
     public ResponseEntity<List<AlbumResponse>> findAll() {
@@ -36,6 +34,7 @@ public class AlbumController {
 
     @PostMapping
     public ResponseEntity<Void> fileUpload(@RequestParam(required = false) MultipartFile file) {
+        log.info("upload file: {}", file.getOriginalFilename());
         albumService.upload(file);
         return ResponseEntity.ok().build();
     }

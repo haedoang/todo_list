@@ -4,6 +4,8 @@ import type { UploadProps } from "antd/lib/upload";
 import Upload from 'antd/lib/upload';
 import message from 'antd/lib/message';
 import InboxOutlined from '@ant-design/icons/InboxOutlined';
+import AlbumViewer from 'components/album/AlbumViewer';
+
 const { Dragger } = Upload;
 
 function Album() {
@@ -14,9 +16,15 @@ function Album() {
         const draggerProps: UploadProps = {
             name: 'file',
             multiple: true,
-            action: 'http://localhost:8080/api/v1/albums',
+            action: 'api/v1/albums',
+            beforeUpload : file => {
+                const isImage = file.type.includes('image');
+                console.log('isImage', isImage);
+                return isImage;
+            },
             onChange(info) {
                 const { status } = info.file;
+                
                 if (status !== 'uploading') {
                     console.log(info.file, info.fileList);
                     queryClient.invalidateQueries('getAlbumList', { exact: true });
@@ -30,6 +38,7 @@ function Album() {
             onDrop(e) {
                 console.log('Dropped files', e.dataTransfer.files);
             },
+            style : { maxHeight : 270, marginBottom : 20 }
         
         };
 
@@ -41,14 +50,13 @@ function Album() {
                 </p>
                 <p className="ant-upload-text">Click or drag file to this area to upload</p>
                 <p className="ant-upload-hint">
-                    Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-                    band files
+                    Support for a single or bulk upload. 
                 </p>
             </Dragger>
             {
                 isLoading ? <div>loading..</div>
                 : isError ? <div>album list request failed</div>
-                : <div>{JSON.stringify(data)}</div>
+                : <AlbumViewer data={data} />
             }
         </>
     );

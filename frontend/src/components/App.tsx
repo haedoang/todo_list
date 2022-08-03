@@ -5,11 +5,11 @@ import Col from 'antd/lib/col';
 
 function App() {
     return (
-        <Row justify='center'>
-            <Col style={{ padding: "0 5px"}} >
+        <Row>
+            <Col span={12} style={{ padding: "0 5px"}} >
                 <Todo />
             </Col>
-            <Col style={{ padding: "0 5px"}}>
+            <Col span={12} style={{ padding: "0 5px"}}>
                 <Album />
             </Col>
         </Row>
