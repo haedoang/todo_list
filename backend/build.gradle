@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-oauth2-client'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation "org.apache.commons:commons-lang3"
@@ -37,22 +39,22 @@ jar {
 	enabled = false
 }
 
-//tasks.register('processFrontendResources', Copy) {
-//	// Directory containing the artifacts in the frontend project
-//	def frontendBuildDir = file("${project(':frontend').buildDir}")
-//	// Directory where the frontend artifacts must be copied to be packaged alltogethers with the backend by the 'war'
-//	// plugin.
-//	def frontendResourcesDir = file("${project.buildDir}/resources/main/public")
-//
-//	group 'Frontend'
-//	description 'Process frontend resources'
-//	dependsOn project(':frontend').tasks.named('assembleFrontend')
-//
-//	from frontendBuildDir
-//	into frontendResourcesDir
-//}
-//
-//tasks.named('processResources') {
-//	dependsOn tasks.named('processFrontendResources')
-//}
+tasks.register('processFrontendResources', Copy) {
+	// Directory containing the artifacts in the frontend project
+	def frontendBuildDir = file("${project(':frontend').buildDir}")
+	// Directory where the frontend artifacts must be copied to be packaged alltogethers with the backend by the 'war'
+	// plugin.
+	def frontendResourcesDir = file("${project.buildDir}/resources/main/public")
+
+	group 'Frontend'
+	description 'Process frontend resources'
+	dependsOn project(':frontend').tasks.named('assembleFrontend')
+
+	from frontendBuildDir
+	into frontendResourcesDir
+}
+
+tasks.named('processResources') {
+	dependsOn tasks.named('processFrontendResources')
+}
 

@@ -1,18 +1,23 @@
-import Todo from 'components/todo';
-import Album from 'components/album';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
+import { useState } from 'react';
+import Main from 'components/pages/Main';
+import Login from 'components/pages/Login';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './pages/layout/Header';
+import { getCookie } from 'utils/CookieUtils';
 
 function App() {
+    const [token, setToken] = useState(getCookie('thisistoken'));
+
+    if (!token) {
+        return <Login setToken={setToken} />
+    }
     return (
-        <Row>
-            <Col span={12} style={{ padding: "0 5px"}} >
-                <Todo />
-            </Col>
-            <Col span={12} style={{ padding: "0 5px"}}>
-                <Album />
-            </Col>
-        </Row>
+        <BrowserRouter>
+            <Header username="haedoang"/>
+            <Routes>
+                <Route path="/" element={<Main />}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 

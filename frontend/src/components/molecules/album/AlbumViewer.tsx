@@ -1,6 +1,6 @@
 import AlbumType from 'types/AlbumResponse';
 import Card from "antd/lib/card";
-import ImageContainer from 'components/ImageContainer';
+import ImageContainer from 'components/atoms/ImageContainer';
 import Row from 'antd/lib/row';
 import Col from 'antd/lib/col';
 

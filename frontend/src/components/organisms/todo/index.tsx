@@ -9,7 +9,7 @@ import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
 import RedoOutlined from '@ant-design/icons/RedoOutlined';
 
 import Input from 'antd/lib/input';
-import { fetchTodoList, fetchUpdate, fetchDelete, fetchSave } from 'ApiUtils';
+import { fetchTodoList, fetchUpdate, fetchDelete, fetchSave } from 'utils/ApiUtils';
 
 function Todo() {
     const queryClient = useQueryClient();
