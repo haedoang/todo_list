@@ -1,5 +1,6 @@
 package io.haedoang.todolist.auth.service;
 
+import io.haedoang.todolist.auth.domain.CustomOAuth2User;
 import io.haedoang.todolist.auth.domain.OAuth2UserInfo;
 import io.haedoang.todolist.auth.domain.OAuth2UserInfoFactory;
 import io.haedoang.todolist.auth.domain.ProviderType;
@@ -35,9 +36,9 @@ public class CustomOauth2UserService extends DefaultOAuth2UserService {
         log.info("oAuth2User: {}", oAuth2User);
 
 
-        process(userRequest, oAuth2User);
+        User user = process(userRequest, oAuth2User);
 
-        return oAuth2User;
+        return new CustomOAuth2User(user);
     }
 
     //인증을 요청하는 사용자에 따라서 없는 회원이면 회원가입, 이미 존재하는 회원이면 업데이트를 실행한다.

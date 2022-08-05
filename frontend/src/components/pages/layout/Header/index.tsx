@@ -1,6 +1,8 @@
 
 import ImageContainer, { ImageContainerProps } from "components/atoms/ImageContainer";
 import Container, { ContainerProps } from "components/atoms/Container";
+import HeaderButtons from "components/organisms/layout/HeaderButtons";
+
 
 const headerContainerProps: ContainerProps = {
   top: "0",
@@ -29,7 +31,8 @@ interface HeaderProps {
 function Header({ username }: HeaderProps) {
   return (
     <Container as="header" {...headerContainerProps}>
-      <ImageContainer as="a" href="/" {...imageContainerProps} />
+        <ImageContainer as="a" href="/" {...imageContainerProps} />
+        <HeaderButtons />
     </Container>
   );
 }

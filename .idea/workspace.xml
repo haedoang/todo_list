@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d53f7e3f-3914-4060-92c8-66a6056799ca" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/OAuth2SuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/Oauth2AuthenticationFailureHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/GithubOauth2UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/GoogleOauth2UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/JwtUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/KakaoOauth2UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/NaverOauth2UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/OAuth2UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/OAuth2UserInfoFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/ProviderType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/service/CustomOauth2UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/user/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/user/domain/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/utils/CookieUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Login/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/OAuth2SuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/GithubOauth2UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/GithubOauth2UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/JwtUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/CustomOAuth2User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/service/CustomOauth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/service/CustomOauth2UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/layout/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/layout/Header/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,6 +256,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="(CustomOAuth2User) authentication.getPrincipal()" language="JAVA" custom="io.haedoang.todolist.auth.domain.CustomOAuth2User" />
+        <watch expression="(OAuth2User) authentication.getPrincipal()" language="JAVA" custom="io.haedoang.todolist.auth.domain.CustomOAuth2User,org.springframework.security.oauth2.core.user.OAuth2User" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
