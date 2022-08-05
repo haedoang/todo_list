@@ -29,9 +29,11 @@ function Todo() {
     });
 
     const { mutate: doSave } = useMutation(fetchSave, {
+        onMutate: () => {
+            setText("");
+        },
         onSuccess: () => {
             queryClient.invalidateQueries('getList', { exact: true });
-            setText("");
         }
     })
 

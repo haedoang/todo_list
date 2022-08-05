@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d53f7e3f-3914-4060-92c8-66a6056799ca" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/utils/CookieUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/OAuth2SuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/GithubOauth2UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/GithubOauth2UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/JwtUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/domain/CustomOAuth2User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/service/CustomOauth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/io/haedoang/todolist/auth/service/CustomOauth2UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/layout/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/layout/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/organisms/todo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/organisms/todo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Login/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +138,7 @@
       <recent name="$PROJECT_DIR$/backend/src/main" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Gradle.todo_list [build]">
     <configuration name="TodoTest.updateStatus" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
