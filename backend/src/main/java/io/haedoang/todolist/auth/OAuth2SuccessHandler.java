@@ -32,6 +32,6 @@ public class OAuth2SuccessHandler extends SavedRequestAwareAuthenticationSuccess
         CookieUtil.addCookie(response, "email", oAuth2User.getUser().getEmail(), COOKIE_EXPIRED_SECOND);
         CookieUtil.addCookie(response, "profile_image_url", oAuth2User.getUser().getProfileImageUrl(), COOKIE_EXPIRED_SECOND);
         getRedirectStrategy()
-                .sendRedirect(request, response, "http://localhost:3000/oauth2/redirect");
+                .sendRedirect(request, response, "http://localhost:8080/oauth2/redirect");
     }
 }
