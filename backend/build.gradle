@@ -39,22 +39,22 @@ jar {
 	enabled = false
 }
 
-tasks.register('processFrontendResources', Copy) {
-	// Directory containing the artifacts in the frontend project
-	def frontendBuildDir = file("${project(':frontend').buildDir}")
-	// Directory where the frontend artifacts must be copied to be packaged alltogethers with the backend by the 'war'
-	// plugin.
-	def frontendResourcesDir = file("${project.buildDir}/resources/main/public")
-
-	group 'Frontend'
-	description 'Process frontend resources'
-	dependsOn project(':frontend').tasks.named('assembleFrontend')
-
-	from frontendBuildDir
-	into frontendResourcesDir
-}
-
-tasks.named('processResources') {
-	dependsOn tasks.named('processFrontendResources')
-}
+//tasks.register('processFrontendResources', Copy) {
+//	// Directory containing the artifacts in the frontend project
+//	def frontendBuildDir = file("${project(':frontend').buildDir}")
+//	// Directory where the frontend artifacts must be copied to be packaged alltogethers with the backend by the 'war'
+//	// plugin.
+//	def frontendResourcesDir = file("${project.buildDir}/resources/main/public")
+//
+//	group 'Frontend'
+//	description 'Process frontend resources'
+//	dependsOn project(':frontend').tasks.named('assembleFrontend')
+//
+//	from frontendBuildDir
+//	into frontendResourcesDir
+//}
+//
+//tasks.named('processResources') {
+//	dependsOn tasks.named('processFrontendResources')
+//}
 

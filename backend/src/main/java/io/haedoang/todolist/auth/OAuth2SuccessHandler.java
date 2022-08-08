@@ -3,6 +3,7 @@ package io.haedoang.todolist.auth;
 import io.haedoang.todolist.auth.domain.CustomOAuth2User;
 import io.haedoang.todolist.utils.CookieUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,8 @@ import java.io.IOException;
 @Slf4j
 @Component
 public class OAuth2SuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+    @Value("${app.oauth2.authorized-redirect-uri}")
+    private String redirectUri;
     public static final int COOKIE_EXPIRED_SECOND = 180;
 
     @Override
@@ -32,6 +35,6 @@ public class OAuth2SuccessHandler extends SavedRequestAwareAuthenticationSuccess
         CookieUtil.addCookie(response, "email", oAuth2User.getUser().getEmail(), COOKIE_EXPIRED_SECOND);
         CookieUtil.addCookie(response, "profile_image_url", oAuth2User.getUser().getProfileImageUrl(), COOKIE_EXPIRED_SECOND);
         getRedirectStrategy()
-                .sendRedirect(request, response, "http://localhost:3000/oauth2/redirect");
+                .sendRedirect(request, response, redirectUri);
     }
 }
