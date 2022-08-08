@@ -1,9 +1,12 @@
 package io.haedoang.todolist.user.domain;
 
 import io.haedoang.todolist.auth.domain.ProviderType;
+import io.haedoang.todolist.base.domain.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
@@ -23,9 +26,11 @@ import static lombok.AccessLevel.PROTECTED;
 @Getter
 @Entity
 @Table(name = "tb_user")
+@SQLDelete(sql = "UPDATE tb_user SET deleted = true where id=?")
+@Where(clause = "deleted=false")
 @NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor
-public class User {
+public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;

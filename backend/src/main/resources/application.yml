@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: oauth
+    include: oauth, s3
   jpa:
     hibernate:
       ddl-auto: create-drop

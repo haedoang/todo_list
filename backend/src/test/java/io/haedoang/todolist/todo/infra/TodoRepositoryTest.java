@@ -60,12 +60,13 @@ class TodoRepositoryTest {
     public void searchWithoutDeleted() {
         // given
         Todo todo1 = Todo.valueOf("todo1");
-        todo1.doDelete();
         Todo todo2 = Todo.valueOf("todo2");
 
         todoRepository.saveAll(
                 Lists.newArrayList(todo1, todo2)
         );
+
+        todoRepository.deleteById(todo1.getId());
 
         // when
         List<Todo> actual = todoRepository.findAll();

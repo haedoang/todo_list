@@ -45,7 +45,7 @@ public class TodoService {
 
     @Transactional
     public void delete(Long id) {
-        findById(id).doDelete();
+        todoRepository.deleteById(id);
     }
 
 

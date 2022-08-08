@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class LocalAlbum implements AlbumHandler {
+public class LocalAlbumHandler implements AlbumHandler {
     private final AtomicLong counter = new AtomicLong();
     private final String fileUploadPath;
 

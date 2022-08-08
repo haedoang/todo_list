@@ -9,7 +9,7 @@ export interface AlbumProps {
 }
 
 function AlbumViewer({ data }: AlbumProps) {
-    const imageUrl = (fileName: string) => "images/" + fileName;
+    const imageUrl = (fileName: string) => (process.env.REACT_APP_MODE === 'cloud') ? fileName : "images/" + fileName;
 
     return (
         <Row>

@@ -1,5 +1,6 @@
 package io.haedoang.todolist.todo.domain;
 
+import io.haedoang.todolist.base.domain.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -28,9 +29,9 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 @Entity
 @Table(name = "tb_todo")
-@SQLDelete(sql = "UDPATE tb_todo SET deleted = true where id=?")
+@SQLDelete(sql = "UPDATE tb_todo SET deleted = true where id=?")
 @Where(clause = "deleted=false")
-public class Todo {
+public class Todo extends BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
@@ -39,8 +40,6 @@ public class Todo {
 
     @Enumerated(EnumType.STRING)
     private Status status = NOT_FINISHED;
-
-    private boolean deleted = Boolean.FALSE;
 
     private final LocalDateTime createdAt = LocalDateTime.now();
 
@@ -62,10 +61,4 @@ public class Todo {
     public void updateStatus() {
         this.status = status.isFinished() ? NOT_FINISHED : FINISHED;
     }
-
-    public void doDelete() {
-        this.deleted = Boolean.TRUE;
-    }
-
-
 }
